@@ -9,6 +9,7 @@ body {
     height: 100dvh;
     margin: 0;
     background-color: black;
+    color: white;
 }
 
 header {
@@ -39,6 +40,23 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#status {
+    margin: 20px;
+    padding: 15px 20px; 
+    border-radius: 10px;
+}
+
+#status.online {
+    background-color: greenyellow;
+    color: black;
+    font-weight: bold;
+}
+
+#status.offline {
+    background-color: red;
+    font-weight: bold;
 }
 
 footer {
