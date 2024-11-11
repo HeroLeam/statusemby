@@ -17,24 +17,19 @@ async function checkSiteStatus(url) {
     }
 }
 
-// URL do site que deseja verificar
-const url = "https://emby.herofield.com.br:8920";
-
-// Verifica o status do site ao carregar a página
-checkSiteStatus(url);
-
 function checkIPv6Support() {
     var ipv6TestUrl = "https://ipv6.google.com/";
+    const statusElement = document.getElementById("status");
 
     fetch(ipv6TestUrl, { mode: 'no-cors' })
         .then(function (response) {
-            // Se o suporte a IPv6 existir, mostra o iframe e oculta o aviso
-            document.getElementById("ipv6-content").style.display = "block"; // Exibe o iframe
+            // Exibe o status e verifica o site apenas se IPv6 estiver ativo
+            statusElement.style.display = "block";
+            checkSiteStatus("https://emby.herofield.com.br:8920");
             showMessageTrue("Você tem suporte IPv6!");
         })
         .catch(function (error) {
-            // Caso contrário, oculta o iframe e exibe o aviso
-            document.getElementById("ipv6-content").style.display = "none"; // Oculta o iframe
+            // Exibe mensagem de erro se o IPv6 não estiver ativo
             showMessageFalse("Você não tem IPv6 ativo.\nEntre em contato com seu provedor para estar fazendo a ativação do protocolo IPv6.");
         });
 }
@@ -43,7 +38,7 @@ function showMessageTrue(message) {
     var messageElement = document.createElement("p");
     messageElement.textContent = message;
     messageElement.classList.add('ipv6True');
-
+    
     var headerElement = document.querySelector('.paragrafo');
     headerElement.parentNode.insertBefore(messageElement, headerElement.nextSibling);
 }
@@ -52,7 +47,7 @@ function showMessageFalse(message) {
     var messageElement = document.createElement("p");
     messageElement.textContent = message;
     messageElement.classList.add('ipv6False');
-
+    
     var headerElement = document.querySelector('.paragrafo');
     headerElement.parentNode.insertBefore(messageElement, headerElement.nextSibling);
 }

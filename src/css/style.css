@@ -44,7 +44,7 @@ main {
 
 #status {
     margin: 20px;
-    padding: 15px 20px; 
+    padding: 15px 20px;
     border-radius: 10px;
 }
 
@@ -57,6 +57,27 @@ main {
 #status.offline {
     background-color: red;
     font-weight: bold;
+}
+
+.ipv6True {
+    background-color: greenyellow;
+    width: auto;
+    color: black;
+    border-radius: 12px;
+    padding: 15px 30px;
+    text-align: center;
+    font-weight: 500;
+    white-space: pre-line;
+}
+
+.ipv6False {
+    background-color: red;
+    width: auto;
+    border-radius: 12px;
+    padding: 15px 30px;
+    text-align: center;
+    font-weight: 500;
+    white-space: pre-line;
 }
 
 footer {
