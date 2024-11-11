@@ -49,7 +49,7 @@ main {
 }
 
 #status.online {
-    background-color: greenyellow;
+    background-color: var(--cor0);
     color: black;
     font-weight: bold;
 }
@@ -60,7 +60,7 @@ main {
 }
 
 .ipv6True {
-    background-color: greenyellow;
+    background-color: var(--cor0);
     width: auto;
     color: black;
     border-radius: 12px;
