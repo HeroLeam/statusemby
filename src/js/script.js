@@ -26,21 +26,11 @@ function checkIPv6Support() {
             // Exibe o status e verifica o site apenas se IPv6 estiver ativo
             statusElement.style.display = "block";
             checkSiteStatus("https://emby.herofield.com.br:8920");
-            // Não chama showMessageTrue para evitar a mensagem de IPv6 ativo
         })
         .catch(function (error) {
             // Exibe mensagem de erro se o IPv6 não estiver ativo
             showMessageFalse("Você não tem IPv6 ativo.\nEntre em contato com seu provedor para estar fazendo a ativação do protocolo IPv6.");
         });
-}
-
-function showMessageTrue(message) {
-    var messageElement = document.createElement("p");
-    messageElement.textContent = message;
-    messageElement.classList.add('ipv6True');
-    
-    var headerElement = document.querySelector('.paragrafo');
-    headerElement.parentNode.insertBefore(messageElement, headerElement.nextSibling);
 }
 
 function showMessageFalse(message) {
