@@ -26,7 +26,7 @@ function checkIPv6Support() {
             // Exibe o status e verifica o site apenas se IPv6 estiver ativo
             statusElement.style.display = "block";
             checkSiteStatus("https://emby.herofield.com.br:8920");
-            showMessageTrue("Você tem suporte IPv6!");
+            // Não chama showMessageTrue para evitar a mensagem de IPv6 ativo
         })
         .catch(function (error) {
             // Exibe mensagem de erro se o IPv6 não estiver ativo
