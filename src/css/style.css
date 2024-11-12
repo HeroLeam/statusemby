@@ -1,42 +1,62 @@
 :root {
-    --cor0: #4cae4f;
-    --cor0h: #6ebf70;
+  --cor0: #4cae4f;
+  --cor0h: #6ebf70;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100dvh;
-    margin: 0;
-    background-color: black;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+img {
+  width: 100px;
+  margin: 20px;
 }
 
 #status {
-    margin: 20px;
-    padding: 15px 20px;
-    border-radius: 10px;
+  margin: 20px;
+  padding: 15px 20px;
+  border-radius: 10px;
 }
 
 #status.online {
-    background-color: var(--cor0);
-    color: black;
-    font-weight: bold;
+  background-color: var(--cor0);
+  color: black;
+  font-weight: bold;
 }
 
 #status.offline {
-    background-color: red;
-    font-weight: bold;
+  background-color: red;
+  font-weight: bold;
 }
 
 .ipv6False {
-    background-color: red;
-    width: 400px;
-    border-radius: 12px;
-    padding: 15px 30px;
-    text-align: center;
-    font-weight: 500;
-    white-space: pre-line;
+  background-color: red;
+  width: 400px;
+  border-radius: 12px;
+  padding: 15px 30px;
+  text-align: center;
+  font-weight: 500;
+  white-space: pre-line;
+  animation: jump 1.8s infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.075);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
